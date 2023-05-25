@@ -1,0 +1,8 @@
+<h1>Welcome to {{hotelName}}</h1>
+<div [hidden]="hideRooms">
+    <div [innerText]="'No of rooms are: ' + numberOfRooms"></div>
+</div>
+<button (click)="toggleRooms()">Toggle</button>
+<div *ngIf="rooms.availableRooms > 0">
+    <app-rooms-list [rooms]="roomList" (selectedRoom)="selectedRoom($event)" ></app-rooms-list>
+</div>

@@ -1,0 +1,29 @@
+Rooms List
+<table class="table">
+    <tr>
+        <th>Index</th>
+        <th>Room No.</th>
+        <th>Type</th>
+        <th>Facilities</th>
+        <th>Price</th>
+        <th>Checked In</th>
+        <th> Select Room </th>
+    </tr>
+    <tr *ngFor="let room of rooms; let i = index">
+        <td>{{i}}</td>
+        <td>{{room.roomNo}}</td>
+        <td>{{room.type}}</td>
+        <td>{{room.facilities}}</td>
+        <td>{{room.price}}</td>
+        <td>{{room.checkedIn}}</td>
+        <td>
+            <button (click)="selectRoom(room)">
+                Select
+            </button> 
+        </td>
+    </tr>
+</table>
+
+<div *ngIf="presentRoom" >
+    {{ presentRoom | json }}
+</div>
